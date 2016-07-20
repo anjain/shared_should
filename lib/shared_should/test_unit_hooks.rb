@@ -1,25 +1,24 @@
 # Ruby 1.9 with MiniTest
-if defined?(MiniTest::Unit::TestCase)
+#if defined?(MiniTest::Unit::TestCase)
   class MiniTest::Unit::TestCase
-    #class << self
+    class << self
       # these methods need to be aliased for both the test class and the should context
-      #alias_method :test_methods_without_shared_should_execute
-    #end
-    alias_method :test_methods_without_shared_should_execute, :test_methods
+      alias_method :test_methods_without_shared_should_execute, :test_methods
+    end
+    #alias_method :test_methods_without_shared_should_execute, :test_methods
     
     class_eval do
       include SharedShould::TestClassHelper
     end
   
-    #def self.test_methods
-    def test_methods
+    def self.test_methods
       # assuming 'test_methods' is called before executing any tests - may be a poor assumption. Find something better?
       execute_class_shared_proxies
     
       test_methods_without_shared_should_execute
     end
   end
-end
+#end
 
 # Ruby 1.8 without MiniTest
 if defined?(Test::Unit::TestCase.suite)
