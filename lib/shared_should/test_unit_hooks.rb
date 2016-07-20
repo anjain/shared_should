@@ -12,7 +12,7 @@ if defined?(MiniTest::Unit::TestCase)
     end
   
     #def self.test_methods
-    def self.test_methods
+    def test_methods
       # assuming 'test_methods' is called before executing any tests - may be a poor assumption. Find something better?
       execute_class_shared_proxies
     
