@@ -5,7 +5,7 @@ if defined?(MiniTest::Unit::TestCase)
       # these methods need to be aliased for both the test class and the should context
       #alias_method :test_methods_without_shared_should_execute
     #end
-    alias_method :test_methods_without_shared_should_execute :test_methods
+    alias_method :test_methods_without_shared_should_execute, :test_methods
     
     class_eval do
       include SharedShould::TestClassHelper
