@@ -1,7 +1,7 @@
 # Ruby 1.9 with MiniTest
 if defined?(MiniTest::Unit::TestCase)
   class MiniTest::Unit::TestCase
-    #class << self
+    class << self
       # these methods need to be aliased for both the test class and the should context
       alias_method :test_methods_without_shared_should_execute
     end
